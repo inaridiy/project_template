@@ -1,0 +1,28 @@
+{
+  "name": "crypteen",
+  "version": "1.0.0",
+  "repository": "https://github.com/inaridiy/web3-sns.git",
+  "author": "inaridiy",
+  "license": "GPL-v3",
+  "private": true,
+  "scripts": {
+    "dev": "run-p interface:dev backend:dev",
+    "interface:dev": "yarn workspace @crypteen/interface dev",
+    "interface:lint": "yarn workspace @crypteen/interface lint",
+    "interface:fix-all": "yarn interface:lint --fix && yarn workspace @web2.7-sns/interface format",
+    "backend:dev": "yarn workspace @crypteen/backend start:dev",
+    "contract:compile": "yarn workspace @crypteen/contract compile",
+    "contract:test": "yarn workspace @crypteen/contract test"
+  },
+  "workspaces": {
+    "packages": [
+      "projects/*"
+    ]
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.26.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.7.0"
+  }
+}
